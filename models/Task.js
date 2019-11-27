@@ -13,7 +13,7 @@ const TaskSchema = new Schema({
         required: true
     },
     dueDate: {
-        type: Number,
+        type: String,
         required: true
     },
     done: {
