@@ -6,6 +6,7 @@ router.get('/', function (req, res, next) {
     res.render('index', {
         title: 'To do app'
     });
+
 });
 
 module.exports = router;
