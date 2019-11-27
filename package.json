@@ -1,0 +1,20 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "Todo list app",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=todo-api:* nodemon --inspect ./bin/www --ignore 'data/*'",
+    "seed": "node seed/seed_db.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJEdelmann/todo-api.git"
+  },
+  "author": "Albert Edelmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AJEdelmann/todo-api/issues"
+  },
+  "homepage": "https://github.com/AJEdelmann/todo-api#readme"
+}
