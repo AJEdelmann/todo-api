@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/AJEdelmann/todo-api/issues"
   },
-  "homepage": "https://github.com/AJEdelmann/todo-api#readme"
+  "homepage": "https://github.com/AJEdelmann/todo-api#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "http-errors": "^1.7.3",
+    "mongoose": "^5.7.12",
+    "morgan": "^1.9.1"
+  }
 }
