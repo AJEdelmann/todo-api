@@ -5,17 +5,18 @@ const {
 
 const userValidationRules = () => {
     return [
-        // body('email')
-        // .isEmail()
-        // .exists()
-        // .normalizeEmail()
-        // .withMessage('Do you call this an email?'),
-        // body('password')
-        // .isLength({
-        //     min: 10
-        // })
-        // .withMessage('Your password should be 10 characters long'),
-        body('name').trim()
+        body('email')
+        .isEmail()
+        .exists()
+        .normalizeEmail()
+        .withMessage('Do you call this an email?'),
+        body('password')
+        .isLength({
+            min: 6
+        })
+        .withMessage('Your password should at least 6 characters long'),
+        body('firstName').trim(),
+        body('lastName').trim()
     ];
 }
 

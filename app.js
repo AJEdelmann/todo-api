@@ -52,6 +52,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // ROUTES
 app.use("/", indexRouter);
 app.use("/tasks", tasksRouter);
+app.use("/users", usersRouter);
 
 // ERROR HANDLING
 app.use(function (req, res, next) {
