@@ -33,7 +33,7 @@ exports.getTask = async (req, res, next) => {
 
 exports.deleteTask = async (req, res, next) => {
     try {
-        const task = await Task.findAndDelete(req.params.id);
+        const task = await Task.findByIdAndDelete(req.params.id);
         if (!task) throw new createError.NotFound();
         res.status(200).send(task);
     } catch (e) {
@@ -43,7 +43,7 @@ exports.deleteTask = async (req, res, next) => {
 
 exports.updateTask = async (req, res, next) => {
     try {
-        const task = await Task.findByAndUpdate(req.params.id, req.body, {
+        const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
             new: true
         });
         if (!task) throw new createError.NotFound();
