@@ -4,24 +4,12 @@ const {
 } = mongoose;
 
 const TaskSchema = new Schema({
-    title: {
-        type: String,
-        required: true
-    },
-    name: {
-        type: String,
-        required: true
-    },
-    dueDate: {
+    text: {
         type: String,
         required: true
     },
     done: {
         type: Boolean,
-        required: true
-    },
-    desc: {
-        type: String,
         required: true
     }
 });
