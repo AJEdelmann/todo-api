@@ -3,7 +3,8 @@ const createError = require("http-errors");
 
 exports.getTasks = async (req, res, next) => {
     try {
-        const tasks = await Task.find();
+        const tasks = await Task.find()
+            .select('-__v');
         res.status(200).send(tasks);
     } catch (e) {
         next(e);
