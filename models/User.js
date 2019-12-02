@@ -21,12 +21,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    birthday: {
-        type: Date
-    },
-    username: {
+    // birthday: {
+    //     type: Date
+    // },
+    userName: {
         type: String,
-        required: true,
         unique: true
     }
 }, {

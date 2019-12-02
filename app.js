@@ -8,6 +8,10 @@ const mongoose = require("mongoose");
 /** ROUTERS */
 const indexRouter = require("./routes/index");
 const tasksRouter = require('./routes/tasks');
+const usersRouter = require('./routes/users');
+// sudo lsof -i tcp:3000
+// sudo killall -9 node
+// DEBUG=[app.js]:* npm start
 
 /** OUR MIDDLEWARE */
 const {

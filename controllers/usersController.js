@@ -12,16 +12,6 @@ exports.getUsers = async (req, res, next) => {
     }
 };
 
-exports.addUser = async (req, res, next) => {
-    try {
-        const user = new User(req.body);
-        await user.save();
-        res.status(200).send(user);
-    } catch (e) {
-        next(e);
-    }
-};
-
 exports.getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.id);
@@ -49,6 +39,18 @@ exports.updateUser = async (req, res, next) => {
             runValidators: true
         });
         if (!user) throw new createError.NotFound();
+        res.status(200).send(user);
+    } catch (e) {
+        next(e);
+    }
+};
+
+exports.addUser = async (req, res, next) => {
+
+    try {
+        const user = new User(req.body);
+        console.log(await user.save())
+        await user.save();
         res.status(200).send(user);
     } catch (e) {
         next(e);

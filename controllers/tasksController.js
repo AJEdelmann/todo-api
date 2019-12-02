@@ -4,7 +4,10 @@ const createError = require("http-errors");
 exports.getTasks = async (req, res, next) => {
     try {
         const tasks = await Task.find()
-            .select('-__v');
+            .select('owner text progress -_id')
+            .where('done')
+            .equals('false')
+            .sort('owner');
         res.status(200).send(tasks);
     } catch (e) {
         next(e);

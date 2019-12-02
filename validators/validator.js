@@ -9,7 +9,7 @@ const userValidationRules = () => {
         .isEmail()
         .exists()
         .normalizeEmail()
-        .withMessage('Do you call this an email?'),
+        .withMessage('This is not a valid email'),
         body('password')
         .isLength({
             min: 6
