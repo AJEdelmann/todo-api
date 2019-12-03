@@ -3,9 +3,9 @@ const createError = require("http-errors");
 
 exports.getUsers = async (req, res, next) => {
     try {
-        //advanced queries for knowledge
-        //const users = await User.find().select('-password -__v').sort('-lastName').limit(3);
-        const users = await User.find();
+        const users = await User
+            .find()
+            .select('-password -email -__v');
         res.status(200).send(users);
     } catch (e) {
         next(e);
@@ -14,7 +14,8 @@ exports.getUsers = async (req, res, next) => {
 
 exports.getUser = async (req, res, next) => {
     try {
-        const user = await User.findById(req.params.id);
+        const user = await User.findById(req.params.id)
+            .select('-__v');
         if (!user) throw new createError.NotFound();
         res.status(200).send(user);
     } catch (e) {
@@ -49,7 +50,7 @@ exports.addUser = async (req, res, next) => {
 
     try {
         const user = new User(req.body);
-        console.log(await user.save())
+        // console.log(await user.save()) this console log show my users
         await user.save();
         res.status(200).send(user);
     } catch (e) {

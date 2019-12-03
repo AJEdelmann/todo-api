@@ -4,6 +4,7 @@ const {
 } = mongoose;
 
 const UserSchema = new Schema({
+    id: false,
     firstName: {
         type: String,
         required: true
@@ -21,9 +22,9 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    // birthday: {
-    //     type: Date
-    // },
+    birthday: {
+        type: Date
+    },
     userName: {
         type: String,
         unique: true
