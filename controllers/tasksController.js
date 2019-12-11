@@ -2,6 +2,7 @@ const Task = require("../models/Task");
 const createError = require("http-errors");
 
 exports.getTasks = async (req, res, next) => {
+    // An Admin should get everybody's tasks, a user only theirs
     try {
         const tasks = await Task.find()
             .select('owner text progress -_id')

@@ -17,6 +17,7 @@ const usersRouter = require('./routes/users');
 const {
     setCors
 } = require('./middleware/security');
+const env = require('./config/config');
 
 // INIT THE SERVER
 const app = express();
@@ -25,7 +26,7 @@ const app = express();
 app.use(logger("dev"));
 
 // CONNECT TO MONGO
-mongoose.connect("mongodb://localhost:27017/todo-api", {
+mongoose.connect(env.db, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

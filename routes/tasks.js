@@ -1,5 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const auth = require('../middleware/authenticator');
+const isAdmin = require('../middleware/rolesAuthenticator');
+
 const {
     getTasks,
     addTask,

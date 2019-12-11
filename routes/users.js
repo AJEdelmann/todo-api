@@ -3,7 +3,8 @@ const router = express.Router();
 const {
     userValidationRules,
     userValidateErrorHandling
-} = require('../validators/validator');
+} = require("../validators/validator");
+
 const {
     getUsers,
     addUser,
@@ -12,14 +13,16 @@ const {
     updateUser
 } = require("../controllers/usersController");
 
+const isAdmin = require("../middleware/rolesAuthenticator");
+const auth = require("../middleware/authenticator");
 
 router
-    .route('/')
+    .route("/")
     .get(getUsers)
     .post(addUser);
 
 router
-    .route('/:id')
+    .route("/:id")
     .get(getUser)
     .delete(deleteUser)
     .put(updateUser);
